@@ -1,13 +1,15 @@
-import 'package:complex_ui_assignment/screens/home_screen/home_page.dart';
-import 'package:complex_ui_assignment/screens/home_screen/home_screen.dart';
+// import 'package:complex_ui_assignment/screens/home_screen/home_page.dart';
+// import 'package:complex_ui_assignment/screens/home_screen/home_screen.dart';
 import 'package:complex_ui_assignment/screens/onboarding_screens/main_feature.dart';
-import 'package:complex_ui_assignment/screens/onboarding_screens/screen_model.dart';
-import 'package:complex_ui_assignment/screens/settings_screen/settings_screen.dart';
+// import 'package:complex_ui_assignment/screens/onboarding_screens/screen_model.dart';
+// import 'package:complex_ui_assignment/screens/settings_screen/settings_screen.dart';
 import 'package:complex_ui_assignment/theme/dark_theme.dart';
 import 'package:complex_ui_assignment/theme/light_theme.dart';
-import 'package:flutter/material.dart';
 
-import 'screens/splash_screen/splash_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// import 'screens/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,13 +25,19 @@ class MyApp extends StatelessWidget {
     return ValueListenableBuilder<bool>(
         valueListenable: darkModeOn,
         builder: (BuildContext context, bool value, Widget? child) {
-          return MaterialApp(
-            themeMode: value ? ThemeMode.dark : ThemeMode.light,
-            debugShowCheckedModeBanner: false,
-            title: 'Mume Music Player',
-            theme: buildLightTheme(),
-            darkTheme: buildDarkTheme(),
-            home: MainFeaturesPage(),
+          return ScreenUtilInit(
+            designSize: const Size(
+              375,
+              812,
+            ),
+            builder: (context, child) => MaterialApp(
+              themeMode: value ? ThemeMode.dark : ThemeMode.light,
+              debugShowCheckedModeBanner: false,
+              title: 'Mume Music Player',
+              theme: buildLightTheme(),
+              darkTheme: buildDarkTheme(),
+              home: MainFeaturesPage(),
+            ),
           );
         });
   }

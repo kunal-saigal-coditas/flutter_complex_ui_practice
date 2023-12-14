@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../data_and_constants/constants.dart';
 import '../home_screen/home_screen.dart';
@@ -16,7 +17,7 @@ class MainFeaturesPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 570,
+            height: 710.h,
             child: PageView(
               controller: _pagecontroller,
               children: const [
@@ -56,8 +57,11 @@ class MainFeaturesPage extends StatelessWidget {
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.easeInOut);
               } else {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HomeScreen()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
               }
             },
             style: ElevatedButton.styleFrom(
@@ -74,9 +78,11 @@ class MainFeaturesPage extends StatelessWidget {
             ),
             child: const Text(
               'Next',
-              style: TextStyle(fontSize: 25),
+              style: TextStyle(
+                fontSize: 25,
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

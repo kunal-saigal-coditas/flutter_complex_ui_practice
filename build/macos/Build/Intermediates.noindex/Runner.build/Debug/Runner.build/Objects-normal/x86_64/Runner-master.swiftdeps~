@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "6af12a4267d40887875718aa86d9416a986649cdfcc2b60076787e53e15b7e7c"
+build_start_time: [1702547727, 890016]
+build_end_time: [1702547727, 63369989]
+inputs:
+  "/Users/coditas/Desktop/Assignments/complex_ui_assignment/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1702547683, 78545808]
+  "/Users/coditas/Desktop/Assignments/complex_ui_assignment/macos/Runner/AppDelegate.swift": !private [1678307516, 0]
+  "/Users/coditas/Desktop/Assignments/complex_ui_assignment/macos/Runner/MainFlutterWindow.swift": !private [1678307516, 0]

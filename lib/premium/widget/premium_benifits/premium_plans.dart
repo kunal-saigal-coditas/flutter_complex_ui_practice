@@ -39,9 +39,9 @@ class PremiumPlans extends StatelessWidget {
           thickness: 1,
         ),
         // const SizedBox(height: 10),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Icon(
               Icons.done,
               color: Colors.white,
@@ -56,9 +56,9 @@ class PremiumPlans extends StatelessWidget {
           ],
         ),
 
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Icon(
               Icons.done,
               color: Colors.white,

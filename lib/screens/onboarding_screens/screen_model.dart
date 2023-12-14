@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenView extends StatelessWidget {
   const ScreenView({super.key, required this.imageUrl, required this.text});
@@ -19,12 +20,12 @@ class ScreenView extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 400,
+            top: 570.h,
             left: 0,
             right: 0,
             child: Container(
               // width: 35,
-              height: 350,
+              height: 350.h,
               padding: const EdgeInsets.only(top: 30, left: 16, right: 16),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
