@@ -10,17 +10,21 @@ class FirstWidget extends StatelessWidget {
       children: [
         Container(
           height: 200,
-          width: double.infinity,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(45),
             gradient: const LinearGradient(
-                colors: [Color.fromARGB(216, 249, 124, 0), Colors.amber],
-                begin: Alignment.bottomRight,
-                end: Alignment.topLeft),
+              colors: [
+                Color.fromARGB(216, 249, 124, 0),
+                Colors.amber,
+              ],
+              begin: Alignment.bottomRight,
+              end: Alignment.topLeft,
+            ),
           ),
         ),
         Positioned(
-          top: 20,
+          top: 10,
           left: 20,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,14 +71,11 @@ class FirstWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 170,
+          width: MediaQuery.of(context).size.width,
+          left: 120,
           top: 10,
           bottom: 0.2,
-          child: SizedBox(
-            height: 200,
-            width: 300,
-            child: Image.asset("assets/images/image1.png"),
-          ),
+          child: Image.asset("assets/images/image1.png"),
         )
       ],
     );

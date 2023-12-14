@@ -18,16 +18,17 @@ class PremiumPlans extends StatelessWidget {
             AllImages.crownImage,
           ),
         ),
-        // const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "\$ $rate ",
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25),
+            Flexible(
+              child: Text(
+                "\$ $rate ",
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
+              ),
             ),
             Text(
               "/$month",
@@ -40,53 +41,69 @@ class PremiumPlans extends StatelessWidget {
           thickness: 1,
         ),
         // const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            Icon(
-              Icons.done,
-              color: Colors.white,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              PremiumTexts.benefitsText1,
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-          ],
+        const Flexible(
+          flex: 1,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.done,
+                color: Colors.white,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                child: Text(
+                  PremiumTexts.benefitsText1,
+                  softWrap: true,
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ),
+            ],
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            Icon(
-              Icons.done,
-              color: Colors.white,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              PremiumTexts.benefitsText2,
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-          ],
+        const Flexible(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.done,
+                color: Colors.white,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                child: Text(
+                  PremiumTexts.benefitsText2,
+                  softWrap: true,
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ),
+            ],
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            Icon(
-              Icons.done,
-              color: Colors.white,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              PremiumTexts.benefitsText3,
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-          ],
+        const Flexible(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.done,
+                color: Colors.white,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                child: Text(
+                  PremiumTexts.benefitsText3,
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                  softWrap: true,
+                ),
+              ),
+            ],
+          ),
         )
       ],
     );

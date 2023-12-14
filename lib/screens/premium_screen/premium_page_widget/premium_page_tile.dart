@@ -36,8 +36,9 @@ class PremiumPageTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(50), color: boxColor),
         child: Center(
           child: Padding(
-              padding: const EdgeInsets.all(25),
-              child: PremiumPlans(rate: rate, month: month)),
+            padding: const EdgeInsets.all(25),
+            child: PremiumPlans(rate: rate, month: month),
+          ),
         ),
       ),
     );

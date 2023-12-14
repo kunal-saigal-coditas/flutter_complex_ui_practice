@@ -71,12 +71,12 @@ class _SettingsState extends State<Settings> {
                   settingName: "Notification",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                SettingsName(
-                  iconToUse: const Icon(Icons.language),
+                const SettingsName(
+                  iconToUse: Icon(Icons.language),
                   settingName: "Language",
                   endingWidget: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text("English(Us)"),
                         Icon(Icons.arrow_forward_ios)
                       ]),

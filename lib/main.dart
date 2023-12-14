@@ -1,3 +1,8 @@
+import 'package:complex_ui_assignment/screens/home_screen/home_page.dart';
+import 'package:complex_ui_assignment/screens/home_screen/home_screen.dart';
+import 'package:complex_ui_assignment/screens/onboarding_screens/main_feature.dart';
+import 'package:complex_ui_assignment/screens/onboarding_screens/screen_model.dart';
+import 'package:complex_ui_assignment/screens/settings_screen/settings_screen.dart';
 import 'package:complex_ui_assignment/theme/dark_theme.dart';
 import 'package:complex_ui_assignment/theme/light_theme.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +29,7 @@ class MyApp extends StatelessWidget {
             title: 'Mume Music Player',
             theme: buildLightTheme(),
             darkTheme: buildDarkTheme(),
-            home: const SplashScreen(),
+            home: MainFeaturesPage(),
           );
         });
   }

@@ -32,30 +32,28 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: ClipRRect(
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorites',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.featured_play_list_outlined),
-              label: 'Playlist',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _itemonTapped,
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.featured_play_list_outlined),
+            label: 'Playlist',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _itemonTapped,
       ),
     );
   }

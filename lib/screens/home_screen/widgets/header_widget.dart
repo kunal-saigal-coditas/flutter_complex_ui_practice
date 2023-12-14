@@ -14,11 +14,17 @@ class HeaderWidget extends StatelessWidget {
           Text(
             categoryName,
             style: const TextStyle(
-                fontWeight: FontWeight.w700, fontSize: 20, fontFamily: ''),
+              fontWeight: FontWeight.w700,
+              fontSize: 20,
+              fontFamily: '',
+            ),
           ),
           const Text(
             'See All',
-            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w700),
+            style: TextStyle(
+              color: Colors.orange,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ],
       ),

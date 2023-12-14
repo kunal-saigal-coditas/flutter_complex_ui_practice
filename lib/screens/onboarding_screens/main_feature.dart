@@ -16,7 +16,7 @@ class MainFeaturesPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 800,
+            height: 570,
             child: PageView(
               controller: _pagecontroller,
               children: const [
@@ -39,13 +39,14 @@ class MainFeaturesPage extends StatelessWidget {
             controller: _pagecontroller,
             count: 3,
             effect: ExpandingDotsEffect(
-                activeDotColor: primaryColor,
-                dotColor: Colors.grey,
-                dotHeight: 7,
-                dotWidth: 7),
+              activeDotColor: primaryColor,
+              dotColor: Colors.grey,
+              dotHeight: 7,
+              dotWidth: 7,
+            ),
           ),
           const SizedBox(
-            height: 20,
+            height: 8,
           ),
           ElevatedButton(
             onPressed: () {

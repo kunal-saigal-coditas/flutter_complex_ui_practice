@@ -70,40 +70,36 @@ class _HomePageState extends State<HomePage>
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 20,
+            left: 16,
           ),
           child: Column(
             children: [
-              PreferredSize(
-                preferredSize: const Size.fromHeight(kToolbarHeight),
-                child: TabBar(
-                  indicatorColor: Colors.white,
-                  indicatorWeight: 3.0,
-                  isScrollable: true,
-                  controller: _tabController,
-                  tabs: const [
-                    Tab(text: 'Suggested'),
-                    Tab(text: 'Songs'),
-                    Tab(text: 'Artist'),
-                    Tab(text: 'Albums'),
-                    Tab(text: 'Favorites'),
-                  ],
-                ),
+              TabBar(
+                // indicatorColor: Colors.white,
+                isScrollable: true,
+                controller: _tabController,
+                tabs: const [
+                  Tab(text: 'Suggested'),
+                  Tab(text: 'Songs'),
+                  Tab(text: 'Artist'),
+                  Tab(text: 'Albums'),
+                  Tab(text: 'Favorites'),
+                ],
               ),
               const SizedBox(
                 height: 20,
               ),
               const HeaderWidget(categoryName: "Recently Played"),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 10.0),
               ListDisplayWidget(category: DummyData.recentlyPlayed),
               const SizedBox(
                 height: 20,
               ),
               const HeaderWidget(categoryName: "Artists"),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 10.0),
               ArtistDisplay(artistList: DummyData.artistsList),
               const HeaderWidget(categoryName: "Most Played"),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 10.0),
               ListDisplayWidget(category: DummyData.recentlyPlayed),
               const SizedBox(
                 height: 20,

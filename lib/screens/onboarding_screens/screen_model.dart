@@ -10,9 +10,6 @@ class ScreenView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const SizedBox(
-            height: double.infinity,
-          ),
           SizedBox(
             width: double.infinity,
             height: double.infinity,
@@ -22,13 +19,13 @@ class ScreenView extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 550,
+            top: 400,
             left: 0,
             right: 0,
             child: Container(
-              width: 395,
-              height: 300,
-              padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
+              // width: 35,
+              height: 350,
+              padding: const EdgeInsets.only(top: 30, left: 16, right: 16),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
@@ -37,15 +34,20 @@ class ScreenView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    text,
-                    style: Theme.of(context).textTheme.displayLarge,
-                    textAlign: TextAlign.center,
+                  Flexible(
+                    child: Text(
+                      text,
+                      style: Theme.of(context).textTheme.displayLarge,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

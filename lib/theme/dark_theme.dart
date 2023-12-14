@@ -29,7 +29,10 @@ ThemeData buildDarkTheme() {
       unselectedLabelStyle: const TextStyle(fontSize: 18.0),
       indicator: BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 4.0, color: primaryColor),
+          bottom: BorderSide(
+            width: 4.0,
+            color: primaryColor,
+          ),
         ),
       ),
     ),
@@ -49,7 +52,9 @@ ThemeData buildDarkTheme() {
         minimumSize: MaterialStateProperty.all(const Size(150, 50)),
         elevation: MaterialStateProperty.all(0),
         foregroundColor: MaterialStateProperty.all(Colors.white),
-        backgroundColor: MaterialStateProperty.all(const Color(0xFF35383F)),
+        backgroundColor: MaterialStateProperty.all(
+          const Color(0xFF35383F),
+        ),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),

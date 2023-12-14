@@ -30,10 +30,16 @@ class ListDisplayWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                Text(
-                  category[index].musicName,
-                  style: const TextStyle(
-                      fontSize: 15.0, fontWeight: FontWeight.bold),
+                Flexible(
+                  child: Text(
+                    category[index].musicName,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),

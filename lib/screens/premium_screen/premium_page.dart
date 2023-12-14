@@ -22,50 +22,47 @@ class _PremiumPageState extends State<PremiumPage> {
         backgroundColor: Theme.of(context).primaryColor,
         iconTheme: Theme.of(context).iconTheme,
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                Text(
-                  "Subscribe to Premium",
-                  style: TextStyle(
-                      color: Color.fromARGB(216, 249, 124, 0),
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold),
+      body: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Subscribe to Premium",
+                style: TextStyle(
+                  color: Color.fromARGB(216, 249, 124, 0),
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                PremiumPageTile(
-                    boxColor: Colors.orange, month: 'month', rate: 9.99),
-                SizedBox(
-                  height: 20,
-                ),
-                PremiumPageTile(
-                  boxColor: Colors.purple,
-                  month: "3 months",
-                  rate: 19.99,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                PremiumPageTile(
-                    boxColor: Colors.redAccent,
-                    month: "12 months",
-                    rate: 75.99),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              PremiumPageTile(
+                  boxColor: Colors.orange, month: 'month', rate: 9.99),
+              SizedBox(
+                height: 20,
+              ),
+              PremiumPageTile(
+                boxColor: Colors.purple,
+                month: "3 months",
+                rate: 19.99,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              PremiumPageTile(
+                  boxColor: Colors.redAccent, month: "12 months", rate: 75.99),
+            ],
           ),
         ),
       ),
