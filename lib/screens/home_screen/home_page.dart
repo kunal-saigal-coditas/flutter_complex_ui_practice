@@ -3,8 +3,8 @@ import './widgets/header_widget.dart';
 import './widgets/list_display_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/constants.dart';
-import '../../core/constants/dummy_data.dart';
+import '../../data_and_constants/constants.dart';
+import '../../data_and_constants/dummy_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,17 +39,17 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Icon(
               CupertinoIcons.music_note_2,
-              color: ColorConstants.primaryColor,
+              color: primaryColor,
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
-            Text(
+            const Text(
               "Mume",
               style: TextStyle(
                   fontSize: 30,

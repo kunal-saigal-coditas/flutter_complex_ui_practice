@@ -5,12 +5,11 @@ class SettingsName extends StatefulWidget {
   final String settingName;
   final Widget endingWidget;
 
-  const SettingsName({
-    super.key,
-    required this.iconToUse,
-    required this.settingName,
-    required this.endingWidget,
-  });
+  const SettingsName(
+      {super.key,
+      required this.iconToUse,
+      required this.settingName,
+      required this.endingWidget});
 
   @override
   State<SettingsName> createState() => _SettingsNameState();

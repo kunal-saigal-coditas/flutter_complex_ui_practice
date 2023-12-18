@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 import '../../../core/constants/dummy_data.dart';
+=======
+import '../../../data_and_constants/dummy_data.dart';
+>>>>>>> 46b88fc140875fac28dfdfb0bf9056818e1d0c7b
 import '../../artist_screen/artist_screen.dart';
 
 class ArtistDisplay extends StatelessWidget {

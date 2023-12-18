@@ -1,9 +1,9 @@
-import 'package:complex_ui_assignment/core/constants/dummy_data.dart';
+import 'package:complex_ui_assignment/data_and_constants/dummy_data.dart';
 import 'package:complex_ui_assignment/screens/artist_screen/songs_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/constants/constants.dart';
+import '../../data_and_constants/constants.dart';
 
 class ArtistScreen extends StatelessWidget {
   final String imageUrl;
@@ -83,9 +83,9 @@ class ArtistScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(150, 50),
                       foregroundColor: Colors.white,
-                      backgroundColor: ColorConstants.primaryColor,
+                      backgroundColor: primaryColor,
                       elevation: 8.0,
-                      shadowColor: ColorConstants.primaryColor.withOpacity(0.5),
+                      shadowColor: primaryColor.withOpacity(0.5),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
@@ -130,11 +130,11 @@ class ArtistScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 8.0),
-                        const Text(
+                        Text(
                           "Play",
                           style: TextStyle(
                             fontSize: 16.0,
-                            color: ColorConstants.primaryColor,
+                            color: primaryColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

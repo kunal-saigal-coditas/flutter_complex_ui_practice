@@ -1,5 +1,5 @@
-import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_conformation_box.dart';
-import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans.dart';
+import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans/premium_plans.dart';
+import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans/premium_conformation/premium_conformation_box.dart';
 import 'package:flutter/material.dart';
 
 class PremiumPageTile extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../core/constants/constants.dart';
+import '../../data_and_constants/constants.dart';
 import '../home_screen/home_screen.dart';
 import 'screen_model.dart';
 
@@ -39,8 +39,8 @@ class MainFeaturesPage extends StatelessWidget {
           SmoothPageIndicator(
             controller: _pagecontroller,
             count: 3,
-            effect: const ExpandingDotsEffect(
-              activeDotColor: ColorConstants.primaryColor,
+            effect: ExpandingDotsEffect(
+              activeDotColor: primaryColor,
               dotColor: Colors.grey,
               dotHeight: 7,
               dotWidth: 7,
@@ -69,7 +69,7 @@ class MainFeaturesPage extends StatelessWidget {
                 horizontal: 140.0,
                 vertical: 14.0,
               ),
-              backgroundColor: ColorConstants.primaryColor,
+              backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                   42.0,
