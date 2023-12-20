@@ -1,5 +1,5 @@
-import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans/premium_plans.dart';
-import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans/premium_conformation/premium_conformation_box.dart';
+import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_plans_widget.dart';
+import 'package:complex_ui_assignment/screens/premium_screen/premium_page_widget/premium_conformation_box.dart';
 import 'package:flutter/material.dart';
 
 class PremiumPageTile extends StatelessWidget {
@@ -31,13 +31,13 @@ class PremiumPageTile extends StatelessWidget {
       },
       child: Container(
         height: 280,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50), color: boxColor),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: PremiumPlans(rate: rate, month: month),
+            child: PremiumPlansWidget(rate: rate, month: month),
           ),
         ),
       ),

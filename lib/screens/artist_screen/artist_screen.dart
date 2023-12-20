@@ -1,9 +1,8 @@
-import 'package:complex_ui_assignment/data_and_constants/dummy_data.dart';
+import 'package:complex_ui_assignment/core/constants/dummy_data.dart';
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:complex_ui_assignment/screens/artist_screen/songs_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../data_and_constants/constants.dart';
 
 class ArtistScreen extends StatelessWidget {
   final String imageUrl;
@@ -20,22 +19,27 @@ class ArtistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: context.appColors.background,
       appBar: AppBar(
+        backgroundColor: context.appColors.background,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back), // Set the custom icon here
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(8),
             child: Icon(
               CupertinoIcons.search,
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(right: 20.0, top: 10, left: 10, bottom: 10),
+            padding: EdgeInsets.only(
+              right: 20.0,
+              top: 10,
+              left: 10,
+              bottom: 10,
+            ),
             child: Icon(
               CupertinoIcons.ellipsis_circle,
             ),
@@ -43,9 +47,10 @@ class ArtistScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(40.0),
@@ -61,120 +66,131 @@ class ArtistScreen extends StatelessWidget {
               ),
               Text(
                 artistName,
-                style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Montreal Serial',
-                    letterSpacing: 2),
+                style: context.appTextTheme.headingTextStyle,
               ),
               const SizedBox(
-                height: 20,
+                height: 8,
               ),
-              const Text('1 Album  |  20 Songs  |  01:25:43 mins'),
+              Text(
+                '1 Album  |  20 Songs  |  01:25:43 mins',
+                style: context.appTextTheme.subtextStyle,
+              ),
               const SizedBox(
-                height: 20,
+                height: 16,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(150, 50),
-                      foregroundColor: Colors.white,
-                      backgroundColor: primaryColor,
-                      elevation: 8.0,
-                      shadowColor: primaryColor.withOpacity(0.5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.shuffle),
-                        SizedBox(width: 8.0),
-                        Text(
-                          "Shuffle",
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                          ),
+                  SizedBox(
+                    height: 40,
+                    width: 150,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: context.appColors.onPrimary,
+                        backgroundColor: context.appColors.primary,
+                        elevation: 0,
+                        shadowColor: context.appColors.primary.withOpacity(0.5),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
                         ),
-                      ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Flexible(
+                              flex: 1,
+                              child: Icon(Icons.shuffle),
+                            ),
+                            const SizedBox(width: 8.0),
+                            Flexible(
+                              flex: 4,
+                              child: Text(
+                                "Shuffle",
+                                style: context.appTextTheme.mediumTextStyle,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 15.0,
-                          height: 15.0,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.orange,
-                          ),
-                          child: const CircleAvatar(
-                            backgroundColor: Colors.transparent,
-                            child: Icon(
-                              Icons.play_arrow,
-                              size: 10.0,
-                              color: Colors.white,
+                  SizedBox(
+                    height: 40,
+                    width: 150,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: context.appColors.onSecondary,
+                        backgroundColor: context.appColors.secondary,
+                        elevation: 0,
+                        shadowColor: context.appColors.primary.withOpacity(0.5),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 15.0,
+                            height: 15.0,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: context.appColors.primary,
+                            ),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Icon(
+                                Icons.play_arrow,
+                                size: 10.0,
+                                color: context.appColors.onPrimary,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 8.0),
-                        Text(
-                          "Play",
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: primaryColor,
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(width: 8.0),
+                          Text(
+                            "Play",
+                            style:
+                                context.appTextTheme.mediumTextStyle.copyWith(
+                              color: context.appColors.primary,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 16,
               ),
-              const Divider(
-                color: Colors.grey,
-                endIndent: 20,
-                indent: 20,
+              Divider(
+                color: context.appColors.secondary,
               ),
               const SizedBox(
-                height: 20,
+                height: 8,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Songs',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          fontFamily: ''),
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                          color: Colors.orange, fontWeight: FontWeight.w700),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Songs',
+                    style: context.appTextTheme.mediumTextStyle,
+                  ),
+                  Text(
+                    'See All',
+                    style: context.appTextTheme.labelTextStyle,
+                  ),
+                ],
               ),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 16),
               SizedBox(
                 height: 400,
                 child: ListView.builder(

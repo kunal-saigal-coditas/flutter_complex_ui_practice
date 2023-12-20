@@ -1,12 +1,15 @@
-import 'package:complex_ui_assignment/data/local_data_source/local_data_source.dart';
-import 'package:get_it/get_it.dart';
-
-import '../../core/constants/constants.dart';
-import '../../screens/settings_screen/widgets/setting_name.dart';
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import '../../main.dart';
-import 'widgets/first_card_widget.dart';
+import 'package:get_it/get_it.dart';
+
+import 'package:complex_ui_assignment/main.dart';
+
+import 'package:complex_ui_assignment/screens/settings_screen/widgets/first_card_widget.dart';
+import 'package:complex_ui_assignment/screens/settings_screen/widgets/setting_name.dart';
+
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
+
+import 'package:complex_ui_assignment/data/local_data_source/local_data_source.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -29,21 +32,23 @@ class _SettingsState extends State<Settings> {
       valueListenable: darkModeOn,
       builder: (BuildContext context, bool value, Widget? child) {
         return Scaffold(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: context.appColors.background,
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            elevation: 0,
-            title: const Row(
+            backgroundColor: context.appColors.background,
+            elevation: 1,
+            shadowColor: context.appColors.background,
+            title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(
                   CupertinoIcons.music_note_2,
-                  color: ColorConstants.primaryColor,
+                  color: context.appColors.primary,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
-                Text(
+                const Text(
                   "Settings",
                 )
               ],
@@ -89,7 +94,7 @@ class _SettingsState extends State<Settings> {
                   iconToUse: const Icon(Icons.remove_red_eye_outlined),
                   settingName: "Dark Mode",
                   endingWidget: CupertinoSwitch(
-                    activeColor: ColorConstants.primaryColor,
+                    activeColor: context.appColors.primary,
                     value: value,
                     onChanged: _toggleTheme,
                   ),
@@ -117,7 +122,7 @@ class _SettingsState extends State<Settings> {
                   iconToUse: Icon(Icons.exit_to_app),
                   settingName: "Quit",
                   endingWidget: Icon(Icons.arrow_forward_ios),
-                )
+                ),
               ],
             ),
           ),

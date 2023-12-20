@@ -1,3 +1,4 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -29,40 +30,38 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: const SizedBox(
-        width: double.infinity,
+      backgroundColor: context.appColors.background,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 200,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(
+                const Image(
                   image: AssetImage("assets/images/logo_2.png"),
                   width: 50,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 Text(
                   "Mume",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.w800,
-                    fontFamily: 'Toronto Subway',
+                  style: context.appTextTheme.titleTextStyle.copyWith(
+                    color: context.appColors.primary,
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 200,
             ),
             SpinKitCircle(
-              color: Color.fromARGB(255, 231, 137, 50),
+              color: context.appColors.primary,
               size: 70.0,
             ),
           ],

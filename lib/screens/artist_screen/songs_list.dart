@@ -1,11 +1,13 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
 
 class SongsList extends StatelessWidget {
-  const SongsList(
-      {super.key,
-      required this.imageUrl,
-      required this.musicName,
-      required this.artistName});
+  const SongsList({
+    super.key,
+    required this.imageUrl,
+    required this.musicName,
+    required this.artistName,
+  });
   final String imageUrl;
   final String musicName;
   final String artistName;
@@ -13,7 +15,10 @@ class SongsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.only(
+        top: 8,
+        bottom: 8,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -34,29 +39,30 @@ class SongsList extends StatelessWidget {
               children: [
                 Text(
                   musicName,
-                  style: const TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: context.appTextTheme.mediumTextStyle,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8.0),
-                Text(artistName),
+                Text(
+                  artistName,
+                  style: context.appTextTheme.subtextStyle,
+                ),
               ],
             ),
           ),
           Container(
             width: 30.0,
             height: 30.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.orange,
+              color: context.appColors.primary,
             ),
-            child: const CircleAvatar(
+            child: CircleAvatar(
               backgroundColor: Colors.transparent,
               child: Icon(
                 Icons.play_arrow,
                 size: 20.0,
-                color: Colors.white,
+                color: context.appColors.onPrimary,
               ),
             ),
           ),

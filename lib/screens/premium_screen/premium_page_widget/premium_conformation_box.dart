@@ -1,7 +1,6 @@
+import 'package:complex_ui_assignment/core/constants/texts_and_images.dart/images.dart';
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/constants/constants.dart';
-import '../../../core/constants/texts_and_images.dart/images.dart';
 
 class PremiumConformationBox extends StatelessWidget {
   const PremiumConformationBox({super.key, required this.month});
@@ -21,9 +20,9 @@ class PremiumConformationBox extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             width: 120,
             height: 200,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: ColorConstants.primaryColor,
+              color: context.appColors.primary,
             ),
             child: Image.asset(
               AllImages.crownImage,
@@ -35,12 +34,11 @@ class PremiumConformationBox extends StatelessWidget {
       content: SingleChildScrollView(
         child: Column(
           children: [
-            const Text(
+            Text(
               "Congratulations!",
-              style: TextStyle(
-                  color: ColorConstants.primaryColor,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold),
+              style: context.appTextTheme.titleTextStyle.copyWith(
+                color: context.appColors.onSecondary,
+              ),
             ),
             const SizedBox(height: 10),
             Text(
@@ -52,15 +50,17 @@ class PremiumConformationBox extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: ColorConstants.primaryColor,
+                    backgroundColor: context.appColors.primary,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                     padding: const EdgeInsets.all(8)),
                 onPressed: () => Navigator.pop(context),
-                child: const Text(
+                child: Text(
                   'OK',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: context.appTextTheme.mediumTextStyle.copyWith(
+                    color: context.appColors.onPrimary,
+                  ),
                 ),
               ),
             ),

@@ -1,7 +1,7 @@
+import 'package:complex_ui_assignment/core/constants/dummy_data.dart';
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
+import 'package:complex_ui_assignment/screens/artist_screen/artist_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../../data_and_constants/dummy_data.dart';
-import '../../artist_screen/artist_screen.dart';
 
 class ArtistDisplay extends StatelessWidget {
   const ArtistDisplay({super.key, required this.artistList});
@@ -10,7 +10,7 @@ class ArtistDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -22,10 +22,12 @@ class ArtistDisplay extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => ArtistScreen(
-                        songs: artist.songs,
-                        imageUrl: artist.imageUrl,
-                        artistName: artist.artistName)),
+                  builder: (context) => ArtistScreen(
+                    songs: artist.songs,
+                    imageUrl: artist.imageUrl,
+                    artistName: artist.artistName,
+                  ),
+                ),
               );
             },
             child: Padding(
@@ -39,8 +41,7 @@ class ArtistDisplay extends StatelessWidget {
                   const SizedBox(height: 8.0),
                   Text(
                     artist.artistName,
-                    style: const TextStyle(
-                        fontSize: 20.0, fontWeight: FontWeight.w700),
+                    style: context.appTextTheme.headingTextStyle,
                   ),
                 ],
               ),

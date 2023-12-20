@@ -1,44 +1,40 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
 
-class SettingsName extends StatefulWidget {
+class SettingsName extends StatelessWidget {
   final Icon iconToUse;
   final String settingName;
   final Widget endingWidget;
 
-  const SettingsName(
-      {super.key,
-      required this.iconToUse,
-      required this.settingName,
-      required this.endingWidget});
+  const SettingsName({
+    super.key,
+    required this.iconToUse,
+    required this.settingName,
+    required this.endingWidget,
+  });
 
-  @override
-  State<SettingsName> createState() => _SettingsNameState();
-}
-
-class _SettingsNameState extends State<SettingsName> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
+    return SizedBox(
       height: 60,
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       child: Card(
-        color: Theme.of(context).primaryColor,
+        color: context.appColors.background,
         elevation: 0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                widget.iconToUse,
+                iconToUse,
                 const SizedBox(width: 15),
                 Text(
-                  widget.settingName,
-                  style: const TextStyle(fontSize: 15),
+                  settingName,
+                  style: context.appTextTheme.mediumTextStyle,
                 )
               ],
             ),
-            widget.endingWidget
+            endingWidget
           ],
         ),
       ),

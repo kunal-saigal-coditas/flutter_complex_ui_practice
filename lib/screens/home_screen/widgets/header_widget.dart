@@ -1,3 +1,4 @@
+import 'package:complex_ui_assignment/core/theme/buildContext_extension.dart';
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -13,18 +14,11 @@ class HeaderWidget extends StatelessWidget {
         children: [
           Text(
             categoryName,
-            style: const TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
-              fontFamily: '',
-            ),
+            style: context.appTextTheme.headingTextStyle,
           ),
-          const Text(
+          Text(
             'See All',
-            style: TextStyle(
-              color: Colors.orange,
-              fontWeight: FontWeight.w700,
-            ),
+            style: context.appTextTheme.labelTextStyle,
           ),
         ],
       ),

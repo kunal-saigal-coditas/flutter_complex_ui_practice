@@ -1,10 +1,11 @@
-import './widgets/artist_display_widget.dart';
-import './widgets/header_widget.dart';
-import './widgets/list_display_widget.dart';
+import 'package:complex_ui_assignment/core/constants/dummy_data.dart';
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
+import 'package:complex_ui_assignment/screens/home_screen/widgets/artist_display_widget.dart';
+import 'package:complex_ui_assignment/screens/home_screen/widgets/header_widget.dart';
+import 'package:complex_ui_assignment/screens/home_screen/widgets/list_display_widget.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../data_and_constants/constants.dart';
-import '../../data_and_constants/dummy_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,26 +36,32 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: context.appColors.background,
       appBar: AppBar(
+        // bottom: PreferredSize(
+        //   preferredSize: Size(MediaQuery.of(context).size.width, 0),
+        //   child: const Divider(
+        //     thickness: 2,
+        //   ),
+        // ),
+        backgroundColor: context.appColors.background,
         automaticallyImplyLeading: false,
-        elevation: 0,
+        // elevation: 0,
+        // shadowColor: context.appColors.background,
+        forceMaterialTransparency: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Icon(
               CupertinoIcons.music_note_2,
-              color: primaryColor,
+              color: context.appColors.primary,
             ),
             const SizedBox(
               width: 15,
             ),
-            const Text(
+            Text(
               "Mume",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: 'Toronto Subway'),
+              style: context.appTextTheme.titleTextStyle,
             )
           ],
         ),
@@ -75,32 +82,63 @@ class _HomePageState extends State<HomePage>
           child: Column(
             children: [
               TabBar(
-                // indicatorColor: Colors.white,
                 isScrollable: true,
                 controller: _tabController,
+                indicatorColor: context.appColors.primary,
+                labelColor: context.appColors.primary,
+                unselectedLabelColor:
+                    context.appColors.onBackground.withOpacity(0.5),
                 tabs: const [
-                  Tab(text: 'Suggested'),
-                  Tab(text: 'Songs'),
-                  Tab(text: 'Artist'),
-                  Tab(text: 'Albums'),
-                  Tab(text: 'Favorites'),
+                  Tab(
+                    text: 'Suggested',
+                  ),
+                  Tab(
+                    text: 'Songs',
+                  ),
+                  Tab(
+                    text: 'Artist',
+                  ),
+                  Tab(
+                    text: 'Albums',
+                  ),
+                  Tab(
+                    text: 'Favorites',
+                  ),
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              const HeaderWidget(categoryName: "Recently Played"),
-              const SizedBox(height: 10.0),
-              ListDisplayWidget(category: DummyData.recentlyPlayed),
+              const HeaderWidget(
+                categoryName: "Recently Played",
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              ListDisplayWidget(
+                category: DummyData.recentlyPlayed,
+              ),
               const SizedBox(
                 height: 20,
               ),
-              const HeaderWidget(categoryName: "Artists"),
-              const SizedBox(height: 10.0),
-              ArtistDisplay(artistList: DummyData.artistsList),
-              const HeaderWidget(categoryName: "Most Played"),
-              const SizedBox(height: 10.0),
-              ListDisplayWidget(category: DummyData.recentlyPlayed),
+              const HeaderWidget(
+                categoryName: "Artists",
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              ArtistDisplay(
+                artistList: DummyData.artistsList,
+              ),
+              const HeaderWidget(
+                categoryName: "Most Played",
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              ListDisplayWidget(
+                category: DummyData.recentlyPlayed,
+              ),
               const SizedBox(
                 height: 20,
               ),

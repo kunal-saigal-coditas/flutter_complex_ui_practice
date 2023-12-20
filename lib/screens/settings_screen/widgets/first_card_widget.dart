@@ -1,3 +1,4 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
 import '../../premium_screen/premium_page.dart';
 
@@ -13,10 +14,10 @@ class FirstWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(45),
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               colors: [
-                Color.fromARGB(216, 249, 124, 0),
-                Colors.amber,
+                context.appColors.primary,
+                context.appColors.primary.withOpacity(0.9),
               ],
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
@@ -31,26 +32,32 @@ class FirstWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 "Enjoy All Benefits!",
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: context.appTextTheme.headingTextStyle.copyWith(
+                  color: context.appColors.onPrimary,
+                ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 245,
                 child: Text(
                   "Enjoy listening songs with better audio quality, without restrictions,and without ads.",
-                  style: TextStyle(color: Colors.white),
+                  style: context.appTextTheme.mediumTextStyle.copyWith(
+                    color: context.appColors.onPrimary,
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 8,
               ),
               ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.white),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                    context.appColors.onPrimary,
+                  ),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -60,10 +67,10 @@ class FirstWidget extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(
+                child: Text(
                   "Get Premium",
-                  style: TextStyle(
-                    color: Color.fromARGB(216, 249, 124, 0),
+                  style: context.appTextTheme.labelTextStyle.copyWith(
+                    color: context.appColors.primary,
                   ),
                 ),
               ),

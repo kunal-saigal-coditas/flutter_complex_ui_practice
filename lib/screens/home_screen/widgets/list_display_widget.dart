@@ -1,3 +1,4 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
 
 class ListDisplayWidget extends StatelessWidget {
@@ -7,7 +8,7 @@ class ListDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -35,10 +36,8 @@ class ListDisplayWidget extends StatelessWidget {
                     category[index].musicName,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: context.appTextTheme.headingTextStyle
+                        .copyWith(fontSize: 15),
                   ),
                 ),
               ],

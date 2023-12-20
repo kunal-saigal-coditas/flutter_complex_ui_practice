@@ -1,3 +1,4 @@
+import 'package:complex_ui_assignment/core/theme/buildcontext_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../settings_screen/settings_screen.dart';
@@ -28,27 +29,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: context.appColors.background,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: context.appColors.background,
         type: BottomNavigationBarType.fixed,
+        selectedIconTheme: IconThemeData(
+          color: context.appColors.primary,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
+            icon: Icon(
+              Icons.home_filled,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(
+              Icons.favorite,
+            ),
             label: 'Favorites',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.featured_play_list_outlined),
+            icon: Icon(
+              Icons.featured_play_list_outlined,
+            ),
             label: 'Playlist',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(
+              Icons.settings,
+            ),
             label: 'Settings',
           ),
         ],
